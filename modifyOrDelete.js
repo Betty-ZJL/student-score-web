@@ -51,8 +51,12 @@ function printTable(stuInfo) {
         '        <tr>\n' +
         '            <td style="text-align:center"><input class="btn btn-primary" type="submit" value="修改"/></td>\n' +
         '            <td>\n' +
-        '<input class="btn btn-primary" type="button" value="删除" onclick="javascript:return deleted(sInfo.name.value,sInfo.id.value)"/></a>\n' +
-        '                <a href="./modifyOrDelete.html"><input class="btn btn-primary" type="button" style="margin-left: 40px;" value="返回上一步"></input></a>\n' +
+        '              <a href="./index.html">\n' +
+        '                <input class="btn btn-primary" type="button" value="删除" onclick="javascript:return deleted(sInfo.name.value,sInfo.id.value)"/>\n' +
+        '             </a>\n' +
+        '             <a href="./modifyOrDelete.html">\n' +
+        '                <input class="btn btn-primary" type="button" style="margin-left: 40px;" value="返回上一步"/>\n' +
+        '           </a>\n' +
         '            </td>\n' +
         '        </tr>\n' +
         '    </form>\n' +

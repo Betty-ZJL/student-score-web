@@ -1,3 +1,5 @@
+# LOOK HERE
+
 > - 从 index.html 打开，这是主页。
 > - 学号不可更改。
 

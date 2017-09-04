@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查询学生成绩信息</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="./query.js"></script>
+</head>
+
+<body>
+
+<div style="margin-top:100px;">
+    <h2 style="text-align:center">查 询 学 生 成 绩 信 息</h2>
+    <div class="center-block" style="width: 310px;margin-top: 20px;padding-left: 10px;">
+        <form class="form-inline" name="ids" onsubmit="queryScore(ids)">
+            <div id="d">
+                <label>请输入学号：（请先确定查询个数，再输入！）</label>
+                <input class="form-control" type="text" name="text_0" pattern="[0-9]{3}" placeholder="3位，例如：001"
+                       style="width:250px" required/>
+            </div>
+            <input class="btn btn-default" type="button" id="addone" value="添加"/>
+            <div style="text-align:center;width: 250px;margin-top: 20px;">
+                <input class="btn btn-primary" type="submit" value="提交"/>
+                <a href="./index.html" style="margin-left: 20px;"><input class="btn btn-primary" type="button"
+                                                                         value="返回主页"></input></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+<script language="javascript">
+    i = 1;
+    document.getElementById("addone").onclick = function () {
+        document.getElementById("d").innerHTML += '<div id="div_' + i + '">' +
+            '<div class="form-group">' +
+            '<input class="form-control" type="text" name="text_' + i + '" pattern="[0-9]{3}" style="width:250px" required/>' +
+            '</div>' +
+            '<input class="btn btn-default" type="button" value="删除"  onclick="del(' + i + ')"/>' +
+            '</div>';
+        i = i + 1;
+    }
+
+    function del(o) {
+        document.getElementById("d").removeChild(document.getElementById("div_" + o));
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改/删除学生成绩信息</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="./modifyOrDelete.js"></script>
+</head>
+
+<body>
+<div style="margin-top:100px;">
+    <h2 style="text-align:center">请 输 入 学 号</h2>
+    <div class="center-block" style="width: 250px;margin-top: 20px;padding-left: 10px;">
+        <form class="form-inline" name="sid" onsubmit="printInfo(sid.id.value)">
+            <input class="form-control" type="text" name="id" pattern="[0-9]{3}" placeholder="3位，例如：001"
+                   style="width:250px" required/>
+            <div style="text-align:center;width: 250px;margin-top: 20px;">
+                <input class="btn btn-primary" type="submit" value="确认"/>
+                <a href="./index.html" style="margin-left: 20px;"><input class="btn btn-primary" type="button"
+                                                                         value="返回主页"></input></a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

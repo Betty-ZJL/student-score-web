@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生成绩信息</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+    function add(stuInfo) {
+        var stu = {};
+        stu.name = stuInfo.name.value.toString();
+        stu.id = stuInfo.id.value.toString();
+        stu.nation = stuInfo.nation.value.toString();
+        stu.clazz = stuInfo.clazz.value.toString();
+        stu.English = stuInfo.English.value.toString();
+        stu.Chinese = stuInfo.Chinese.value.toString();
+        stu.math = stuInfo.math.value.toString();
+        stu.program = stuInfo.program.value.toString();
+        stu.sum = (parseFloat(stu.English) + parseFloat(stu.Chinese) + parseFloat(stu.math) + parseFloat(stu.program)).toString();
+        var stuStr = JSON.stringify(stu);
+        localStorage[stuInfo.id.value] = stuStr;
+        alert(`学生 ${stu.name} 成绩信息添加成功！`);
+    }
+</script>
+<div style="margin-top:50px;">
+    <h2 style="text-align:center">添 加 学 生 成 绩 信 息</h2>
+    <table class="table table-hover center-block" style="width: 400px">
+        <form name="stuInfo" action="index.html"
+              onsubmit="add(stuInfo)">
+            <tr>
+                <th style="width: 150px;">姓&nbsp;&nbsp;名</th>
+                <td><input type="text" name="name" required/></td>
+            </tr>
+            <tr>
+                <th>学&nbsp;&nbsp;号</th>
+                <td><input type="text" name="id" pattern="[0-9]{3}" placeholder="3位，例如：001" required/></td>
+            </tr>
+            <tr>
+                <th>民&nbsp;&nbsp;族</th>
+                <td><input type="text" name="nation" required/></td>
+            </tr>
+            <tr>
+                <th>班&nbsp;&nbsp;级</th>
+                <td>
+                    <input list="clazzes" name="clazz" pattern="[1-3]{1}" required/>
+                    <datalist id="clazzes">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <th>英&nbsp;&nbsp;语</th>
+                <td><input type="number" name="English" min="0" max="100" placeholder="百分制" required/></td>
+            </tr>
+            <tr>
+                <th>语&nbsp;&nbsp;文</th>
+                <td><input type="number" name="Chinese" min="0" max="100" required/></td>
+            </tr>
+            <tr>
+                <th>数&nbsp;&nbsp;学</th>
+                <td><input type="number" name="math" min="0" max="100" required/></td>
+            </tr>
+            <tr>
+                <th>编&nbsp;&nbsp;程</th>
+                <td><input type="number" name="program" min="0" max="100" required/></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><input class="btn btn-primary" type="submit" value="提交"/></td>
+                <td style="text-align:center">
+                    <a href="./index.html"><input class="btn btn-primary" type="button" value="返回主页"></input></a>
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+
+</body>
+</html>
